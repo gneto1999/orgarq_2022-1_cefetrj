@@ -1,1 +1,1 @@
-# ORGANIZAÇÃO DE ESTRUTURAS DE ARQUIVOS -- 2022.1
+# Organização de Estruturas de Arquivos -- 2022.1
