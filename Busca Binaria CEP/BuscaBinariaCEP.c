@@ -13,7 +13,7 @@ struct _Endereco
 	char uf[72];
 	char sigla[2];
 	char cep[8];
-	char lixo[2]; // Ao Espaço no final da linha + quebra de linha
+	char lixo[2]; // Ao EspaÃ§o no final da linha + quebra de linha
 };
 
 int main(int argc, char**argv)
@@ -35,10 +35,10 @@ int main(int argc, char**argv)
 
 	fseek(f, 0, SEEK_END);
 	long tam_byte = ftell(f);
-	long tam_reg = tam_byte/sizeof(Endereco);
+	long qtd_reg = tam_byte/sizeof(Endereco);
 
 	int inicio = 0;
-	int fim = tam_reg - 1;
+	int fim = qtd_reg - 1;
 
 	while(inicio <= fim){
 		int meio = (inicio + fim)/2;
@@ -49,7 +49,11 @@ int main(int argc, char**argv)
 		int comparacao = strncmp(argv[1], e.cep, 8);
 
 		if(comparacao == 0){
-			printf("%.8s", e.cep);
+			printf("CEP: %.8s", e.cep);
+			printf("\nLogradouro: %.72s", e.logradouro);
+			printf("\nBairro: %.72s", e.bairro);
+			printf("\nCidade: %.72s", e.cidade);
+			printf("\nUF: %.72s", e.uf);
 		}
 
 		if(comparacao < 0){
